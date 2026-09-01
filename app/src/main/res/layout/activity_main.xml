@@ -26,58 +26,69 @@
             android:id="@+id/BTN00"
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
-            android:layout_margin="@dimen/buttonMargin"/>
+            android:layout_margin="@dimen/buttonMargin"
+            android:textSize="@dimen/buttonTextSize"
+            />
         <Button
             android:id="@+id/BTN01"
-            android:layout_width="@dimen/buttonWidth"
+            android:layout_width="98dp"
             android:layout_height="@dimen/buttonHeight"
-            android:layout_margin="@dimen/buttonMargin"/>
+            android:layout_margin="@dimen/buttonMargin"
+            android:textSize="@dimen/buttonTextSize"/>
         <Button
             android:id="@+id/BTN02"
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
-            android:layout_margin="@dimen/buttonMargin"/>
+            android:layout_margin="@dimen/buttonMargin"
+            android:textSize="@dimen/buttonTextSize"/>
         <Button
             android:id="@+id/BTN10"
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
-            android:layout_margin="@dimen/buttonMargin"/>
+            android:layout_margin="@dimen/buttonMargin"
+            android:textSize="@dimen/buttonTextSize"/>
         <Button
             android:id="@+id/BTN11"
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
-            android:layout_margin="@dimen/buttonMargin"/>
+            android:layout_margin="@dimen/buttonMargin"
+            android:textSize="@dimen/buttonTextSize"/>
         <Button
             android:id="@+id/BTN12"
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
-            android:layout_margin="@dimen/buttonMargin"/>
+            android:layout_margin="@dimen/buttonMargin"
+            android:textSize="@dimen/buttonTextSize"/>
         <Button
             android:id="@+id/BTN20"
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
-            android:layout_margin="@dimen/buttonMargin"/>
+            android:layout_margin="@dimen/buttonMargin"
+            android:textSize="@dimen/buttonTextSize"/>
         <Button
             android:id="@+id/BTN21"
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
-            android:layout_margin="@dimen/buttonMargin"/>
+            android:layout_margin="@dimen/buttonMargin"
+            android:textSize="@dimen/buttonTextSize"/>
         <Button
-            android:id="@+id/BT22"
+            android:id="@+id/BTN22"
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
-            android:layout_margin="@dimen/buttonMargin"/>
+            android:layout_margin="@dimen/buttonMargin"
+            android:textSize="@dimen/buttonTextSize"/>
     </GridLayout>
     <TextView
         android:id="@+id/TXVPlayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/GRLTablero"
-        android:text="@string/player"
+        android:text="@string/player0"
         android:textSize="@dimen/textSizeNormal"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/marginTop"
+        android:textColor="@color/purple_700"
         />
     <Button
         android:id="@+id/BTNRestart"
@@ -88,5 +99,6 @@
         android:text="@string/Restart"
         android:layout_marginTop="@dimen/marginTop"
         android:textSize="@dimen/textSizeNormal"
+        android:visibility="invisible"
         />
 </RelativeLayout>

@@ -7,4 +7,5 @@
     <dimen name="buttonMargin">5dp</dimen>
     <dimen name="textSizeNormal">20sp</dimen>
     <dimen name="marginTopFirst">100dp</dimen>
+    <dimen name="buttonTextSize">50sp</dimen>
 </resources>
