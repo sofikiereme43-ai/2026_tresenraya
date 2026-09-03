@@ -2,6 +2,7 @@ package bo.edu.uajms.marianagutierrez.a2026_tresenraya
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -52,8 +53,11 @@ class MainActivity: AppCompatActivity()
         BTNRestart.setOnClickListener()
         {
             Log.d("Click",  "Hiciste click en Reiniciar")
+            enableGame()
         }
     }
+
+
 
     private fun click(row: Int, col: Int, button: Button) {
         if (button.text=="") {
@@ -69,23 +73,44 @@ class MainActivity: AppCompatActivity()
                 TXVPlayer.setText(getString(R.string.player0))
             }
             verifyVictory()
-
+            verifyNoWinner()
         }
         }
 
     private fun verifyVictory() {
         if (verifyCols() || verifyRows() || verifyDiagonals())
         {
+            printArray()
             if (currentPlayer == 0)
             {
                 TXVPlayer.setText(getString(R.string.playerXwin))
             }
             else
             {
-                TXVPlayer.setText(getString(R.string.player0win))
+                TXVPlayer.setText("Gano el jugador 0")
             }
+            disableGame()
         }
     }
+
+    private fun verifyNoWinner() {
+        var ban: Boolean=false;
+        for (i in 0..<rows) {
+            for (j in 0..<cols) {
+
+                if (Tablero[i][j]==""){
+                    ban=true;
+                    break
+                }
+            }
+        }
+        if (!ban){
+            TXVPlayer.setText(getString(R.string.noWinner));
+        }
+        disableGame()
+    }
+
+
     private fun verifyCols(): Boolean
     {
         for (i in 0 ..< rows)
@@ -102,7 +127,7 @@ class MainActivity: AppCompatActivity()
     {
         for (i in 0 ..< rows)
         {
-            if (Tablero[i][0] == Tablero[i][1] && Tablero[i][0] == Tablero[i][2]&& Tablero[0][i] != "")
+            if (Tablero[i][0] == Tablero[i][1] && Tablero[i][0] == Tablero[i][2]&& Tablero[i][0] != "")
             {
                 return true
             }
@@ -119,4 +144,34 @@ class MainActivity: AppCompatActivity()
         }
         return true
     }
+    private fun printArray() {
+        Log.d(
+            "Click", "${Tablero[0][0]}- + ${Tablero[0][1]}-${Tablero[0][2]}-"+
+                    "${Tablero[1][0]}-+ ${Tablero[1][1]}-${Tablero[1][2]}-"+
+                    "${Tablero[2][0]}-+ ${Tablero[2][1]}-${Tablero[2][2]}-"
+        )
+    }
+    private fun enableGame() {
+        for (i in BTNTablero.indices)
+        {
+            Tablero= Array( size=rows){ Array (size=cols){""} }
+            BTNTablero[i].isEnabled=true;
+            BTNTablero[i].setText("")
+            BTNRestart.visibility= View.INVISIBLE
+
+        }
+
+        currentPlayer=0;
+        TXVPlayer.setText(R.string.player0)
+    }
+
+    private fun disableGame() {
+        for (i in BTNTablero.indices)
+        {
+
+            BTNTablero[i].isEnabled=false;
+            BTNRestart.visibility= View.VISIBLE
+        }
+    }
+
 }
